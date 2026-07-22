@@ -36,7 +36,11 @@ SECRET_KEY = get_env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+def get_allowed_hosts():
+    raw = os.environ.get('ALLOWED_HOSTS', '')
+    return [h.strip() for h in raw.split(',') if h.strip()]
+
+ALLOWED_HOSTS = get_allowed_hosts()
 
 
 # Application definition

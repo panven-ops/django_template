@@ -4,5 +4,6 @@ metadata:
   name: django-config
 data:
   DB_NAME: "generic_keys"
-  DB_HOST: "postgres-service"
+  DB_HOST: "postgres-headless"
   DB_PORT: "5432"
+  ALLOWED_HOSTS: "*"
